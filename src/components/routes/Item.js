@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
-import apiUrl from '../../../apiConfig'
-import Layout from '../shared/Layout'
+import apiUrl from '../../apiConfig'
+// import Layout from '../shared/Layout'
 
 class Item extends Component {
   constructor (props) {
@@ -44,7 +44,7 @@ class Item extends Component {
     }
 
     return (
-      <Layout>
+      <Fragment>
         <h4>{item.title}</h4>
         <p>Description: {item.description}</p>
         <button onClick={this.destroy}>Delete Item</button>
@@ -52,7 +52,7 @@ class Item extends Component {
           <button>Edit</button>
         </Link>
         <Link to="/items">Back to all items</Link>
-      </Layout>
+      </Fragment>
     )
   }
 }

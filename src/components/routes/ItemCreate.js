@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import ItemForm from '../shared/ItemForm'
-import Layout from '../shared/Layout'
+// import Layout from '../shared/Layout'
 
 class ItemCreate extends Component {
   constructor (props) {
@@ -29,10 +29,14 @@ class ItemCreate extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    const { user } = this.props
 
     axios({
       url: `${apiUrl}/items`,
       method: 'POST',
+      headers: {
+        'Authorization': `Token token=${user.token}`
+      },
       data: { item: this.state.item }
     })
       .then(res => this.setState({ createdItemId: res.data.item.id }))
@@ -48,14 +52,14 @@ class ItemCreate extends Component {
     }
 
     return (
-      <Layout>
+      <Fragment>
         <ItemForm
           item={item}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           cancelPath="/"
         />
-      </Layout>
+      </Fragment>
     )
   }
 }

@@ -1,30 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const MovieForm = ({ movie, handleSubmit, handleChange, cancelPath }) => (
+const ItemForm = ({ item, handleSubmit, handleChange, cancelPath }) => (
   <form onSubmit={handleSubmit}>
-    <label>Title</label>
+    <label>I want a ...</label>
     <input
-      placeholder="A Wonderful Film"
-      value={movie.title}
+      placeholder="socks"
+      value={item.title}
       name="title"
       onChange={handleChange}
     />
 
-    <label>Director</label>
+    <label>Description</label>
     <input
-      placeholder="John Doe"
-      value={movie.director}
-      name="director"
-      onChange={handleChange}
-    />
-
-    <label>Date Released</label>
-    <input
-      type="date"
-      placeholder="YYYY-MM-DD"
-      value={movie.year}
-      name="year"
+      placeholder="fuzzy"
+      value={item.description}
+      name="description"
       onChange={handleChange}
     />
 
@@ -35,4 +26,4 @@ const MovieForm = ({ movie, handleSubmit, handleChange, cancelPath }) => (
   </form>
 )
 
-export default MovieForm
+export default ItemForm

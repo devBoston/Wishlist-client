@@ -9,6 +9,11 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
+import Items from '../routes/Items.js'
+import Item from '../routes/Item.js'
+import ItemCreate from '../routes/ItemCreate.js'
+import Nav from '../shared/Nav.js'
+
 class App extends Component {
   constructor () {
     super()
@@ -54,7 +59,20 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
+          <Route user={user} exact path='/' render={() => (
+            <SignIn alert={this.alert} setUser={this.setUser} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/items' render={() => (
+            <Items alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/items/:id' render={(props) => (
+            <Item {...props} alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/create-item' render={(props) => (
+            <ItemCreate {...props} alert={this.alert} user={user} />
+          )} />
         </main>
+        <Nav/>
       </Fragment>
     )
   }

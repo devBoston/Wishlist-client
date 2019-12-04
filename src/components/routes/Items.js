@@ -8,7 +8,13 @@ const Items = props => {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    axios(`${apiUrl}/items`)
+    axios({
+      url: `${apiUrl}/items/`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${props.user.token}`
+      }
+    })
       .then(response => {
         setItems(response.data.items.reverse())
       })
