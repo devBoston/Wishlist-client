@@ -14,17 +14,28 @@ class Item extends Component {
       deleted: false
     }
   }
-
+  // should it be params.id? or just params
   componentDidMount () {
-    axios(`${apiUrl}/items/${this.props.match.params.id}`)
+    const { user } = this.props
+    axios({
+      url: `${apiUrl}/items/${this.props.match.params.id}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Token token=${user.token}`
+      }
+    })
       .then(res => this.setState({ item: res.data.item }))
       .catch(console.error)
   }
 
   destroy = () => {
+    const { user } = this.props
     axios({
       url: `${apiUrl}/items/${this.props.match.params.id}`,
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Token token=${user.token}`
+      }
     })
       .then(() => this.setState({ deleted: true }))
       .catch(console.error)
@@ -45,7 +56,7 @@ class Item extends Component {
 
     return (
       <Fragment>
-        <h4>{item.title}</h4>
+        <h4>{item.name}</h4>
         <p>Description: {item.description}</p>
         <button onClick={this.destroy}>Delete Item</button>
         <Link to={`/items/${this.props.match.params.id}/edit`}>

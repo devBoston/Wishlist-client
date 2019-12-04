@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-
+// check lines 9 and 16
 const Items = props => {
   const [items, setItems] = useState([])
+  // const { user } = this.props
 
   useEffect(() => {
     axios({
@@ -28,7 +29,7 @@ const Items = props => {
       action
       href={`#items/${item._id}`}
     >
-      {item.title}
+      {item.name}
     </ListGroup.Item>
   ))
 
@@ -37,7 +38,7 @@ const Items = props => {
       <div className="col-sm-10 col-md-8 mx-auto mt-5">
         <div className="d-flex justify-content-between align-items-center">
           <h1>Items</h1>
-          {props.user && <Link to="/create-item">Add a item</Link>}
+          {props.user && <Link to="/create-item">Add an item</Link>}
         </div>
         <ListGroup>
           {itemsJsx}

@@ -6,8 +6,8 @@ const ItemForm = ({ item, handleSubmit, handleChange, cancelPath }) => (
     <label>I want a ...</label>
     <input
       placeholder="socks"
-      value={item.title}
-      name="title"
+      value={item.name}
+      name="name"
       onChange={handleChange}
     />
 

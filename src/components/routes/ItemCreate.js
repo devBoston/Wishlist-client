@@ -12,7 +12,7 @@ class ItemCreate extends Component {
 
     this.state = {
       item: {
-        title: '',
+        name: '',
         description: ''
       },
       createdItemId: null
