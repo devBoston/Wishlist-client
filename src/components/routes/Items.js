@@ -25,9 +25,9 @@ const Items = props => {
 
   const itemsJsx = items.map(item => (
     <ListGroup.Item
-      key={item._id}
+      key={item.id}
       action
-      href={`#items/${item._id}`}
+      href={`#items/${item.id}`}
     >
       {item.name}
     </ListGroup.Item>

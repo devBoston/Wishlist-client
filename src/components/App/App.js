@@ -12,6 +12,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Items from '../routes/Items.js'
 import Item from '../routes/Item.js'
 import ItemCreate from '../routes/ItemCreate.js'
+import ItemEdit from '../routes/ItemEdit.js'
 import Nav from '../shared/Nav.js'
 
 class App extends Component {
@@ -70,6 +71,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/create-item' render={(props) => (
             <ItemCreate {...props} alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/items/:id/edit' render={(props) => (
+            <ItemEdit {...props} alert={this.alert} user={user} />
           )} />
         </main>
         <Nav/>

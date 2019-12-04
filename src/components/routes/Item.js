@@ -3,7 +3,6 @@ import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
-// import Layout from '../shared/Layout'
 
 class Item extends Component {
   constructor (props) {
@@ -14,7 +13,7 @@ class Item extends Component {
       deleted: false
     }
   }
-  // should it be params.id? or just params
+
   componentDidMount () {
     const { user } = this.props
     axios({

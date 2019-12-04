@@ -5,7 +5,7 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import ItemForm from '../shared/ItemForm'
 
-class ItemCreate extends Component {
+class ItemEdit extends Component {
   constructor (props) {
     super(props)
 
@@ -14,8 +14,21 @@ class ItemCreate extends Component {
         name: '',
         description: ''
       },
-      createdItemId: null
+      updated: false
     }
+  }
+
+  componentDidMount () {
+    const { user } = this.props
+    axios({
+      url: `${apiUrl}/items/${this.props.match.params.id}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Token token=${user.token}`
+      }
+    })
+      .then(res => this.setState({ item: res.data.item }))
+      .catch(console.error)
   }
 
   handleChange = event => {
@@ -31,23 +44,23 @@ class ItemCreate extends Component {
     const { user } = this.props
 
     axios({
-      url: `${apiUrl}/items`,
-      method: 'POST',
+      url: `${apiUrl}/items/${this.state.item.id}`,
+      method: 'PATCH',
       headers: {
         'Authorization': `Token token=${user.token}`
       },
       data: { item: this.state.item }
     })
-      .then(res => this.setState({ createdItemId: res.data.item.id }))
+      .then(res => this.setState({ updated: true }))
       .catch(console.error)
   }
 
   render () {
+    const { item, updated } = this.state
     const { handleChange, handleSubmit } = this
-    const { createdItemId, item } = this.state
 
-    if (createdItemId) {
-      return <Redirect to={`/items/${createdItemId}`} />
+    if (updated) {
+      return <Redirect to={`/items/${this.props.match.params.id}`} />
     }
 
     return (
@@ -56,11 +69,11 @@ class ItemCreate extends Component {
           item={item}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
-          cancelPath="/"
+          cancelPath={`/items/${this.props.match.params.id}`}
         />
       </Fragment>
     )
   }
 }
 
-export default ItemCreate
+export default ItemEdit
