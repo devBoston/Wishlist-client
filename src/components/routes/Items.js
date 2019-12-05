@@ -19,8 +19,8 @@ const Items = props => {
       .then(response => {
         setItems(response.data.items.reverse())
       })
-      .then(() => props.alert({ message: 'Here are your current items', variant: 'success' }))
-      .catch(() => props.alert({ heading: 'Not able to retrieve items', message: 'Sorry this isn\'t working', variant: 'success' }))
+      // .then(() => props.alert({ message: 'Here are your wishes!', variant: 'success' }))
+      .catch(() => props.alert({ heading: 'Unable to retrieve wishes', message: 'Sorry this isn\'t working', variant: 'danger' }))
   }, [])
 
   const itemsJsx = items.map(item => (
@@ -37,8 +37,8 @@ const Items = props => {
     <div className="row">
       <div className="col-sm-10 col-md-8 mx-auto mt-5">
         <div className="d-flex justify-content-between align-items-center">
-          <h1>Items</h1>
-          {props.user && <Link to="/create-item">Add an item</Link>}
+          <h1>Wishes</h1>
+          {props.user && <Link to="/create-item" style={{ color: '#ffffff' }}>Add another Wish</Link>}
         </div>
         <ListGroup>
           {itemsJsx}

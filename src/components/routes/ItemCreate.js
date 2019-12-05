@@ -56,7 +56,7 @@ class ItemCreate extends Component {
           item={item}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
-          cancelPath="/"
+          cancelPath="/items"
         />
       </Fragment>
     )

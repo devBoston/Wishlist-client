@@ -49,22 +49,21 @@ class Item extends Component {
 
     if (deleted) {
       return <Redirect to={
-        { pathname: '/items', state: { msg: 'Item succesfully deleted!' } }
+        { pathname: '/items', state: { msg: 'Wish succesfully deleted!' } }
       } />
     }
 
     return (
       <Fragment>
-        <h4>{item.name}</h4>
+        <h3>{item.name}</h3>
         <p>Description: {item.description}</p>
-        <button onClick={this.destroy}>Delete Item</button>
+        <button onClick={this.destroy}>Remove</button>
         <Link to={`/items/${this.props.match.params.id}/edit`}>
           <button>Edit</button>
         </Link>
-        <Link to="/items">Back to my Wish List</Link>
       </Fragment>
     )
   }
 }
-
+// removed after link tag in line 63       <Link to="/items" style={{ color: '#ffffff' }}>Back to my Wish List</Link>
 export default Item
