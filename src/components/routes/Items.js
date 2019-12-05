@@ -10,7 +10,7 @@ const Items = props => {
 
   useEffect(() => {
     axios({
-      url: `${apiUrl}/items/`,
+      url: `${apiUrl}items/`,
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${props.user.token}`
