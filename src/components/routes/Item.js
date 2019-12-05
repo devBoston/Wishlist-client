@@ -49,7 +49,7 @@ class Item extends Component {
 
     if (deleted) {
       return <Redirect to={
-        { pathname: '/', state: { msg: 'Item succesfully deleted!' } }
+        { pathname: '/items', state: { msg: 'Item succesfully deleted!' } }
       } />
     }
 
@@ -61,7 +61,7 @@ class Item extends Component {
         <Link to={`/items/${this.props.match.params.id}/edit`}>
           <button>Edit</button>
         </Link>
-        <Link to="/items">Back to all items</Link>
+        <Link to="/items">Back to my Wish List</Link>
       </Fragment>
     )
   }

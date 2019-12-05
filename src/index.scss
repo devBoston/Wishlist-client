@@ -1,1 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  margin: 0;
+  padding: 0;
+
+  /** background image */
+  background-image: url("./snow.gif");
+  background-color: beige;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}

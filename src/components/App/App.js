@@ -13,7 +13,7 @@ import Items from '../routes/Items.js'
 import Item from '../routes/Item.js'
 import ItemCreate from '../routes/ItemCreate.js'
 import ItemEdit from '../routes/ItemEdit.js'
-import Nav from '../shared/Nav.js'
+// import Nav from '../shared/Nav.js'
 
 class App extends Component {
   constructor () {
@@ -76,10 +76,9 @@ class App extends Component {
             <ItemEdit {...props} alert={this.alert} user={user} />
           )} />
         </main>
-        <Nav/>
       </Fragment>
     )
   }
 }
-
+// took out <Nav/> after </main>
 export default App

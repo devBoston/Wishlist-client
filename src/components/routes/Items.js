@@ -19,7 +19,7 @@ const Items = props => {
       .then(response => {
         setItems(response.data.items.reverse())
       })
-      .then(() => props.alert({ heading: 'Success', message: 'You got items', variant: 'success' }))
+      .then(() => props.alert({ message: 'Here are your current items', variant: 'success' }))
       .catch(() => props.alert({ heading: 'Not able to retrieve items', message: 'Sorry this isn\'t working', variant: 'success' }))
   }, [])
 
