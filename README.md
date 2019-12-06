@@ -30,6 +30,10 @@ JavaScript ES6, React, axios for AJAX
 ## Planning
 To start planning the layout of the website, I first made wireframes. I visualized what I wanted all the functions to be and created the user stories below . Then after setting up the API I tested the applicaiton with curl scripts and starting building out the front end application by each component. 
 
+### Links to Wire frame and ERD
+https://imgur.com/a/dPcG5gK
+https://imgur.com/a/YynHdfO
+
 
 # User Stories
 
