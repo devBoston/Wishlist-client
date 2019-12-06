@@ -14,10 +14,10 @@ A front-end application built with React where users can log in and add itms to 
 
 ## Links
 
-Deployed Front-End Client: https://ssuchir.github.io/Wishlist-client/#/
-Front-End Client Repository: https://github.com/ssuchir/Wishlist-client
-Deployed Back-End API: https://https://calm-fjord-72091.herokuapp.com/
-Back-End API repository: https://github.com/ssuchir/Wishlist-api
+* Deployed Front-End Client: https://ssuchir.github.io/Wishlist-client/#/
+* Front-End Client Repository: https://github.com/ssuchir/Wishlist-client
+* Deployed Back-End API: https://https://calm-fjord-72091.herokuapp.com/
+* Back-End API repository: https://github.com/ssuchir/Wishlist-api
 
 
 ## Technologies Used
@@ -31,13 +31,13 @@ JavaScript ES6, React, axios for AJAX
 To start planning the layout of the website, I first made wireframes. I visualized what I wanted all the functions to be and created the user stories below . Then after setting up the API I tested the applicaiton with curl scripts and starting building out the front end application by each component. 
 
 ### Links to Wire frame and ERD
-https://imgur.com/a/dPcG5gK
-https://imgur.com/a/YynHdfO
+* https://imgur.com/a/dPcG5gK
+* https://imgur.com/a/YynHdfO
 
 
 # User Stories
 
-As a user, I want to be able to sign up/in/out and change password.
-As a user, I want to be able to add wishes to my list.
-As a user, I want to be able to update and delete my wishes. 
-As a user, I want to view my latest wish at the top of the list. 
+* As a user, I want to be able to sign up/in/out and change password.
+* As a user, I want to be able to add wishes to my list.
+* As a user, I want to be able to update and delete my wishes. 
+* As a user, I want to view my latest wish at the top of the list. 
